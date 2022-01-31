@@ -1,0 +1,12 @@
+site_name: Infinity Framework API Documents
+site_url: https://4x8matrix.github.io/
+
+theme:
+    name: material
+
+nav:
+  - Home: index.md
+  - About: about.md
+
+extra:
+  version: 1.0
