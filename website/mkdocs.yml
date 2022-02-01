@@ -1,12 +1,84 @@
-site_name: Infinity Framework API Documents
+site_name: Infinity Framework
 site_url: https://4x8matrix.github.io/
 
+repo_url: https://github.com/4x8Matrix/InfinityFramework
+repo_name: 4x8Matrix/InfinityFramework
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
 theme:
-    name: material
+  name: material
+
+  logo: img/InfinityIcon.png
+  favicon: img/favicon.ico
+  icon:
+    repo: fontawesome/brands/git-alt
+
+  font:
+    text: Rubik
+
+  features:
+    - content.code.annotate
+    - navigation.instant
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/toggle-switch-off-outline 
+        name: Switch to dark mode
+
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
 
 nav:
-  - Home: index.md
-  - About: about.md
+  - Home: pages\home.md
+  - Installation: pages\installation.md
+  - Setup: pages\setup.md
+  - Changelog: pages\change.md
+
+  - Classes:
+    - Network Class: pages\classes\netClass.md
+    - Private Class: pages\classes\privateClass.md
+    - Proxy Class: pages\classes\proxyClass.md
+    - Public Class: pages\classes\publicClass.md
+    - Static Class: pages\classes\staticClass.md
+
+  - Libaries:
+    - Adornee: pages\libs\adornee.md
+    - Hooks: pages\libs\hooks.md
+    - Iter: pages\libs\iter.md
+    - Maid: pages\libs\maid.md
+    - Math: pages\libs\math.md
+    - Net: pages\libs\net.md
+    - Promise: pages\libs\promise.md
+    - Proxy: pages\libs\proxy.md
+    - Signal: pages\libs\signal.md
+    - State: pages\libs\state.md
+    - Table: pages\libs\table.md
+    - Timer: pages\libs\timer.md
+    - Utils: pages\libs\utils.md
 
 extra:
+  generator: false
   version: 1.0
+
+  social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/y6amckh
+      name: Discord Community behind Infinity Framework!
