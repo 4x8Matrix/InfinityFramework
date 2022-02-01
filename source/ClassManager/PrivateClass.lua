@@ -11,6 +11,11 @@ PrivateClass.Methods = { }
 
 -- // Methods
 function PrivateClass:Construct(Class)
+    function Class.Extended(Class, ClassName)
+        Class.IgnoreInfinityRegister = true
+        Class.Infinity.Classes[#Class.Infinity.Classes + 1] = Class
+    end
+
     return Class
 end
 

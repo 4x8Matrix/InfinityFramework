@@ -26,7 +26,7 @@ function Infinity:Initialize(...)
                 end
             end
 
-            self[Class.Name] = Class
+            if not Class.IgnoreInfinityRegister then self[Class.Name] = Class end
         end
 
         self.Initialized = true
