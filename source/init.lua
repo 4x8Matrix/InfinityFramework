@@ -2,7 +2,7 @@
 local RunService = game:GetService("RunService")
 
 -- // Variables
-local Infinity = { Name = "InfinityFramework", Author = "@AsyncMatrix" } Infinity.__index = Infinity
+local Infinity = { Name = "InfinityFramework" } Infinity.__index = Infinity
 
 -- // Infinity Initialization
 function Infinity:Initialize(...)
@@ -10,14 +10,6 @@ function Infinity:Initialize(...)
         local Proxy = self.__proxy self.__proxy = nil
 
         for _, Class in next, self.Classes do
-            if Class.Initialized then
-                local Success, Result = pcall(Class.Initialized, Class, ...)
-
-                if not Success then
-                    Promise:Reject(Class.Name .. " : " .. Result)
-                end
-            end
-
             if self.ClassManager.Classes[Class.Type].Finally then
                 local Success, Result = pcall(self.ClassManager.Classes[Class.Type].Finally, self.ClassManager.Classes[Class.Type], Class, ...)
 
@@ -27,6 +19,16 @@ function Infinity:Initialize(...)
             end
 
             if not Class.IgnoreInfinityRegister then self[Class.Name] = Class end
+        end
+        
+        for _, Class in next, self.Classes do
+            if Class.Initialized then
+                local Success, Result = pcall(Class.Initialized, Class, ...)
+
+                if not Success then
+                    Promise:Reject(Class.Name .. " : " .. Result)
+                end
+            end
         end
 
         self.Initialized = true

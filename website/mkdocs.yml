@@ -8,6 +8,7 @@ repo_name: 4x8Matrix/InfinityFramework
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
+  - tables
   - admonition
   - pymdownx.inlinehilite
   - pymdownx.snippets
@@ -38,7 +39,7 @@ theme:
       accent: light blue
       toggle:
         icon: material/toggle-switch-off-outline 
-        name: Switch to dark mode
+        name: Switch to light mode
 
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -46,7 +47,7 @@ theme:
       accent: light blue
       toggle:
         icon: material/toggle-switch
-        name: Switch to light mode
+        name: Switch to dark mode
 
 nav:
   - Home: index.md
