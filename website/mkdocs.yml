@@ -1,5 +1,6 @@
 site_name: Infinity Framework
 site_url: https://4x8matrix.github.io/
+site_description: API Documentation for the Infinity Framework
 
 repo_url: https://github.com/4x8Matrix/InfinityFramework
 repo_name: 4x8Matrix/InfinityFramework
@@ -7,6 +8,7 @@ repo_name: 4x8Matrix/InfinityFramework
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
+  - admonition
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
@@ -50,7 +52,7 @@ nav:
   - Home: index.md
   - Installation: pages\installation.md
   - Setup: pages\setup.md
-  - Changelog: pages\change.md
+  - Infinity: pages\infinity.md
 
   - Classes:
     - Network Class: pages\classes\netClass.md
