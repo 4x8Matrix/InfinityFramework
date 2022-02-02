@@ -47,7 +47,7 @@ theme:
         name: Switch to light mode
 
 nav:
-  - Home: pages\home.md
+  - Home: index.md
   - Installation: pages\installation.md
   - Setup: pages\setup.md
   - Changelog: pages\change.md
