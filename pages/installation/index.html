@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="API Documentation for the Infinity Framework">
+      
       
       
         <link rel="canonical" href="https://4x8matrix.github.io/pages/installation/">
@@ -64,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sample-program" class="md-skip">
+        <a href="#installing-to-roblox-studio" class="md-skip">
           Skip to content
         </a>
       
@@ -282,8 +284,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sample-program" class="md-nav__link">
-    Sample Program
+  <a href="#installing-to-roblox-studio" class="md-nav__link">
+    Installing to Roblox Studio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-to-the-filesystem" class="md-nav__link">
+    Installing to the Filesystem
   </a>
   
 </li>
@@ -319,8 +328,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../change/" class="md-nav__link">
-        Changelog
+      <a href="../infinity/" class="md-nav__link">
+        Infinity
       </a>
     </li>
   
@@ -665,13 +674,23 @@
 
   <h1>Installation</h1>
 
-<h2 id="sample-program">Sample Program</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">local</span> <span class="kr">function</span> <span class="nf">ComputePageName</span><span class="p">()</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="kr">return</span> <span class="n">_G</span><span class="p">.</span><span class="n">Page</span><span class="p">.</span><span class="n">Class</span><span class="p">.</span><span class="n">Name</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kr">end</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">warn</span><span class="p">(</span><span class="n">ComputePageName</span><span class="p">())</span>
-</code></pre></div>
+<p>There are two supported ways to install Infinity. </p>
+<p>For our examples, We'll install <code>Infinity</code> to <code>ReplicatedStorage</code>. In Practice, it's okay to install Infinity anywhere in your experience. </p>
+<hr />
+<h2 id="installing-to-roblox-studio">Installing to Roblox Studio</h2>
+<ol>
+<li>Download the latest RBXM File from <a href="https://github.com/4x8Matrix/InfinityFramework/releases">GitHub Releases</a></li>
+<li>Insert the model into Studio (<a href="https://devforum.roblox.com/t/how-to-insert-rbxm-files-to-roblox-studio/464834/3">DevForum Response</a>)</li>
+<li>Move the model into a suitable location such as ReplicatedStorage</li>
+</ol>
+<hr />
+<h2 id="installing-to-the-filesystem">Installing to the Filesystem</h2>
+<ol>
+<li>Download the latest Zip Archive from <a href="https://github.com/4x8Matrix/InfinityFramework/releases">GitHub Releases</a></li>
+<li>Extract the <code>Source</code> folder from the Zip Archive into your codebase</li>
+<li>Rename the <code>Source</code> folder to <code>Infinity</code></li>
+</ol>
+<p>You can use a plugin such as <a href="https://rojo.space">Rojo</a> to Sync changes to Studio</p>
 
               
             </article>
