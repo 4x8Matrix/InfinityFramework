@@ -1,9 +1,11 @@
-site_name: Infinity Framework
-site_url: https://4x8matrix.github.io/
-site_description: API Documentation for the Infinity Framework
+site_name:                    Infinity Framework
+site_url:                     https://4x8matrix.github.io/
+site_description:             API Documentation for the Infinity Framework
 
-repo_url: https://github.com/4x8Matrix/InfinityFramework
-repo_name: 4x8Matrix/InfinityFramework
+repo_url:                     https://github.com/4x8Matrix/InfinityFramework
+repo_name:                    4x8Matrix/InfinityFramework
+
+docs_dir:                     APIDocumentation
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -13,17 +15,19 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
 
 theme:
-  name: material
+  name:                       material
 
-  logo: img/InfinityIcon.png
-  favicon: img/favicon.ico
+  logo:                       Assets/Icons/InfinityIcon.png
+  favicon:                    Assets/Icons/favicon.ico
   icon:
-    repo: fontawesome/brands/git-alt
+    repo:                     fontawesome/brands/git-alt
 
   font:
-    text: Rubik
+    text:                     Rubik
 
   features:
     - content.code.annotate
@@ -33,55 +37,58 @@ theme:
     - search.highlight
 
   palette:
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: blue
-      accent: light blue
+    - media:                  "(prefers-color-scheme: dark)"
+      scheme:                 slate
+      primary:                blue
+      accent:                 light blue
       toggle:
-        icon: material/toggle-switch-off-outline 
-        name: Switch to light mode
+        icon:                 material/toggle-switch-off-outline 
+        name:                 Switch to light mode
 
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: blue
-      accent: light blue
+    - media:                  "(prefers-color-scheme: light)"
+      scheme:                 default
+      primary:                blue
+      accent:                 light blue
       toggle:
-        icon: material/toggle-switch
-        name: Switch to dark mode
+        icon:                 material/toggle-switch
+        name:                 Switch to dark mode
 
 nav:
-  - Home: index.md
-  - Installation: pages\installation.md
-  - Setup: pages\setup.md
-  - Infinity: pages\infinity.md
+  - Home:                     index.md
+  - Installation:             InstallPage.md
+  - Setup:                    SetupPage.md
+  - Infinity:                 InfinityPage.md
 
   - Classes:
-    - Network Class: pages\classes\netClass.md
-    - Private Class: pages\classes\privateClass.md
-    - Proxy Class: pages\classes\proxyClass.md
-    - Public Class: pages\classes\publicClass.md
-    - Static Class: pages\classes\staticClass.md
+    - Network Class:          InfinityPages\InfinityClasses\NetworkClass.md
+    - Private Class:          InfinityPages\InfinityClasses\PrivateClass.md
+    - Public Class:           InfinityPages\InfinityClasses\PublicClass.md
+    - Static Class:           InfinityPages\InfinityClasses\StaticClass.md
+    - Base Class:             InfinityPages\InfinityClasses\BaseClass.md
 
   - Libaries:
-    - Adornee: pages\libs\adornee.md
-    - Hooks: pages\libs\hooks.md
-    - Iter: pages\libs\iter.md
-    - Maid: pages\libs\maid.md
-    - Math: pages\libs\math.md
-    - Net: pages\libs\net.md
-    - Promise: pages\libs\promise.md
-    - Proxy: pages\libs\proxy.md
-    - Signal: pages\libs\signal.md
-    - State: pages\libs\state.md
-    - Table: pages\libs\table.md
-    - Timer: pages\libs\timer.md
-    - Utils: pages\libs\utils.md
+    - Adornee:                InfinityPages\InfinityLibaries\AdorneeLibary.md
+    - Hooks:                  InfinityPages\InfinityLibaries\HooksLibary.md
+    - Iter:                   InfinityPages\InfinityLibaries\IterLibary.md
+    - Maid:                   InfinityPages\InfinityLibaries\MaidLibary.md
+    - Math:                   InfinityPages\InfinityLibaries\MathLibary.md
+    - Net:                    InfinityPages\InfinityLibaries\NetLibary.md
+    - Promise:                InfinityPages\InfinityLibaries\PromiseLibary.md
+    - Proxy:                  InfinityPages\InfinityLibaries\ProxyLibary.md
+    - Signal:                 InfinityPages\InfinityLibaries\SignalLibary.md
+    - State:                  InfinityPages\InfinityLibaries\StateLibary.md
+    - Table:                  InfinityPages\InfinityLibaries\TableLibary.md
+    - Timer:                  InfinityPages\InfinityLibaries\TimerLibary.md
+    - Utils:                  InfinityPages\InfinityLibaries\UtilsLibary.md
+
+  - Singletons:
+    - Console:                InfinityPages\InfinitySingletons\InfinityConsole.md
 
 extra:
-  generator: false
-  version: 1.0
+  generator:                  false
+  version:                    1.2
 
   social:
-    - icon: fontawesome/brands/discord
-      link: https://discord.gg/y6amckh
-      name: Discord Community behind Infinity Framework!
+    - icon:                   fontawesome/brands/discord
+      link:                   https://discord.gg/y6amckh
+      name:                   Discord Community behind Infinity Framework!

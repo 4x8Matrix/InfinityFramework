@@ -22,7 +22,7 @@ end
 
 function PromiseObject:Catch(Method)
     if self.Status and self.Status == PromiseLibary.Rejected then
-        task.spawn(Method, self:GetResult())
+        task.spawn(Method, self, self:GetResult())
     end
 
     self.Internal.Catch = Method
@@ -40,11 +40,11 @@ function PromiseObject:Then(Method)
     return self
 end
 
-function PromiseObject:Retry(...)
+function PromiseObject:Retry()
     self.Status = nil
 
     self.Internal.Thread = coroutine.create(self.Internal.Routine)
-    self.Success, self.Internal.Result = coroutine.resume(self.Internal.Thread, self, ...)
+    self.Success, self.Internal.Result = coroutine.resume(self.Internal.Thread, self, table.unpack(self.Internal.Args))
 
     if not self.HasResult then
         PromiseLibary.Result = self.Internal.Result
@@ -115,9 +115,9 @@ function PromiseObject:Reject(...)
     end
 
     if self.Internal.Catch then
-        task.spawn(self.Internal.Catch, ...)
+        task.spawn(self.Internal.Catch, self, ...)
     else
-        warn(("Unhandled Promise Rejection: %s\n%s"):format(self:GetResult() or "???", debug.traceback()))
+        warn(("Unhandled Promise Rejection: %s\n%s"):format(self:GetResult() or "???", debug.traceback(self.Internal.Thread)))
     end
 end
 
@@ -125,7 +125,7 @@ end
 function PromiseLibary.new(Routine, ...)
     local PromiseObject = setmetatable({ }, PromiseObject)
 
-    PromiseObject.Internal = { Thread = coroutine.create(Routine); Routine = Routine; Await = {  }; Then = {  }; }
+    PromiseObject.Internal = { Thread = coroutine.create(Routine); Routine = Routine; Await = {  }; Then = {  }; Args = { ... } }
     PromiseObject.Success, PromiseObject.Internal.Result = coroutine.resume(PromiseObject.Internal.Thread, PromiseObject, ...)
 
     if not PromiseObject.Success then
@@ -175,7 +175,7 @@ function PromiseLibary:Race(Objects)
         for _, Promise in ipairs(Objects) do
            if Promise.Status == PromiseLibary.Resolved then
                return Promise
-           end 
+           end
         end
 
         task.wait()

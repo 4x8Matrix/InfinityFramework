@@ -2,13 +2,15 @@
 local RunService = game:GetService("RunService")
 
 -- // Variables
-local ClassManager = { }
+local ClassManager = { Classes = { } }
 
-ClassManager.Children = script:GetChildren()
-ClassManager.Classes = { }
+ClassManager.ClassModules = require(script.ClassModules)
+ClassManager.SigletonModules = require(script.SigletonModules)
 
 -- // Methods
-function ClassManager:Object(Class)
+function ClassManager:Construct(ClassName)
+    local Class = self.Classes.BaseClass:Construct(self.Infinity)
+
     local Proxy = newproxy(true)
     local Table = getmetatable(Proxy)
 
@@ -19,27 +21,55 @@ function ClassManager:Object(Class)
     Table.__tostring = function() return Name end
     Table.__metatable = "The metatable is locked"
 
-    return Proxy
-end
-
-function ClassManager:Construct(Infinity, ClassName)
-    local Class = self.Classes.BaseClass:Construct(Infinity)
-
     Class:__Inherit(self.Classes[ClassName])
     Class:__Initialize(self.Classes[ClassName])
 
     Class.Construct = nil
 
-    return self:Object(Class)
+    return Proxy
+end
+
+function ClassManager:InvokeClassEvent(EventClasses, Event, ...)
+    for _, Class in ipairs(EventClasses) do
+        if Class[Event] then
+            Class[Event](Class, ...)
+        end
+    end
+end
+
+function ClassManager:BuildEventLoop(EventClasses)
+    if not self.Infinity.IsServer then
+        RunService.RenderStepped:Connect(function(...) self:InvokeClassEvent(EventClasses, "Stepped", ...) end)
+    end
+
+    RunService.Heartbeat:Connect(function(...) self:InvokeClassEvent(EventClasses, "Heartbeat", ...) end)
+end
+
+function ClassManager:ConstructClasses()
+    self.Infinity.StaticClass = self:Construct("StaticClass")
+    self.Infinity.PrivateClass = self:Construct("PrivateClass")
+    self.Infinity.PublicClass = self:Construct("PublicClass")
+
+    if self.Infinity.IsServer then
+        self.Infinity.NetworkClass = self:Construct("NetworkClass")
+    else
+        self.Infinity.ProxyClass = self:Construct("ProxyClass")
+    end
+end
+
+function ClassManager:ConstructSingletons()
+    self.Infinity.FileSystem:LoadTable(self.SigletonModules)
 end
 
 -- // Initialization
-function ClassManager:Initialize()
-    for _, Value in ipairs(self.Children) do
+function ClassManager:Init(Infinity)
+    self.Infinity = Infinity
+
+    for _, Value in ipairs(self.ClassModules) do
         ClassManager.Classes[Value.Name] = require(Value)
     end
 
     return ClassManager
 end
 
-return ClassManager:Initialize()
+return ClassManager

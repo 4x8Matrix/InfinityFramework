@@ -3,34 +3,36 @@ local LibaryManager = { }
 
 LibaryManager.Children = script:GetChildren()
 
-LibaryManager.Libaries = { }
-LibaryManager.Compile = { }
+LibaryManager.Libaries0 = { }
+LibaryManager.Libaries1 = { }
 
 -- // Methods
-function LibaryManager:Export(Base)
-    for _, Value in ipairs(self.Libaries) do Base[Value.Name] = Value end
-    for Index, Value in ipairs(self.Compile) do
-        local CompiledModule = Value(Base, Index)
+function LibaryManager:DeployLibaries()
+    for _, Value in ipairs(self.Libaries0) do self.Infinity[Value.Name] = Value end
+    for _, Value in ipairs(self.Libaries1) do
+        local CompiledModule = Value(self.Infinity)
 
-        Base[CompiledModule.Name] = CompiledModule
+        self.Infinity[CompiledModule.Name] = CompiledModule
     end
 end
 
 -- // Initialization
-function LibaryManager:Initialize()
+function LibaryManager:Init(Infinity)
+    self.Infinity = Infinity
+
     for _, Value in ipairs(self.Children) do
         if Value.ClassName ~= "ModuleScript" then return warn(("Invalid Lib-Module: Expected ModuleScript, Got %s [%s]"):format(Value.ClassName, Value:GetFullName())) end
 
         local Module = require(Value)
 
         if type(Module) == "function" then
-            self.Compile[#self.Compile + 1] = Module
+            table.insert(self.Libaries1, Module)
         else
-            self.Libaries[#self.Libaries + 1] = Module
+            table.insert(self.Libaries0, Module)
         end
     end
 
     return LibaryManager
 end
 
-return LibaryManager:Initialize()
+return LibaryManager

@@ -1,9 +1,11 @@
+local DataStoreService = game:GetService("DataStoreService")
 -- // Variables
 local MathLibary = { Name = "Math" }
 
 -- // Table-Sub Libaries
 MathLibary.Worm = require(script.PerlinWorm)
 MathLibary.Guid = require(script.Guid)
+MathLibary.IK = require(script.IK)
 
 -- // Initialize
 for Index, Value in next, math do

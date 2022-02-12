@@ -55,6 +55,10 @@ function IterLibary.new(Object)
     return IterLibary.Infinity.Proxy:FromTable(self)
 end
 
+function IterLibary:FromVararg(...)
+    return self.new({ ... })
+end
+
 -- // Initialization
 return function(Infinity)
     IterLibary.Infinity = Infinity

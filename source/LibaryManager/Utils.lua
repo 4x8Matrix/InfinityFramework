@@ -10,12 +10,30 @@ function UtilsLibary:InheritProperties(BaseObject, BaseProperties)
     return BaseObject
 end
 
-function UtilsLibary:CloneInstance(BaseObject, BaseProperties)
-    return self:InheritProperties(BaseObject:Clone(), BaseProperties)
+function UtilsLibary:CloneInstance(BaseObject, BaseProperties, BaseChildren)
+	local BaseProperties = BaseProperties or { }
+	local BaseChildren = BaseChildren or { }
+	
+	local Object = self:InheritProperties(BaseObject:Clone(), BaseProperties)
+	
+	for _, ChildObject in ipairs(BaseChildren) do
+		ChildObject.Parent = Object
+	end
+	
+	return Object
 end
 
-function UtilsLibary:NewInstance(ObjectClass, BaseProperties)
-    return self:InheritProperties(Instance.new(ObjectClass), BaseProperties)
+function UtilsLibary:NewInstance(ObjectClass, BaseProperties, BaseChildren)
+	local BaseProperties = BaseProperties or { }
+	local BaseChildren = BaseChildren or { }
+	
+	local Object = self:InheritProperties(Instance.new(ObjectClass), BaseProperties)
+	
+	for _, ChildObject in ipairs(BaseChildren) do
+		ChildObject.Parent = Object
+	end
+	
+	return Object
 end
 
 function UtilsLibary:WaitForChildOfType(Object, Class)
