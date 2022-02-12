@@ -12,7 +12,7 @@
       
         <link rel="canonical" href="https://4x8matrix.github.io/InfinityPages/InfinityClasses/NetworkClass/">
       
-      <link rel="icon" href="../../../Assets/Icons/favicon.ico">
+      <link rel="icon" href="../../../SiteAssets/Icons/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
     
     
@@ -88,7 +88,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="Infinity Framework" class="md-header__button md-logo" aria-label="Infinity Framework" data-md-component="logo">
       
-  <img src="../../../Assets/Icons/InfinityIcon.png" alt="logo">
+  <img src="../../../SiteAssets/Icons/InfinityIcon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -211,7 +211,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Infinity Framework" class="md-nav__button md-logo" aria-label="Infinity Framework" data-md-component="logo">
       
-  <img src="../../../Assets/Icons/InfinityIcon.png" alt="logo">
+  <img src="../../../SiteAssets/Icons/InfinityIcon.png" alt="logo">
 
     </a>
     Infinity Framework
@@ -799,7 +799,7 @@
 <p>The events fired here are context-bound, Server's Heartbeat wont be sent to the client. </p>
 </div>
 <h2 id="networkclass-model">NetworkClass Model</h2>
-<p><img src="../../../Assets/Images/NetworkCModel.png" width="200"></p>
+<p><img src="../../../SiteAssets/Images/NetworkCModel.png" width="200"></p>
 <p>When a Client joins the game, they will recieve a packet holding important information to structure and replicate NetworkClasses to their Infinity client, from here on the client will create a <em>ProxyClass</em> [Internal Infinity Class] which will be used to replicate functions, signals and so on to the server.</p>
 <p>This ProxyClass represents the Server-NetworkClass, Call functions and so on as if you were calling the server. This ProxyClass respects the __namecall metamethod when it comes to functions, If you use :, the server will recieve self and so on.</p>
 <p>A list of objects which can be replicated through the Infinity Proxy/Net class is:</p>
