@@ -2,117 +2,127 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://4x8matrix.github.io/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPage/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InstallPage/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/SetupPage/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinityClasses/BaseClass/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinityClasses/NetworkClass/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinityClasses/PrivateClass/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinityClasses/PublicClass/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinityClasses/StaticClass/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinityLibaries/AdorneeLibary/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinityLibaries/HooksLibary/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinityLibaries/IterLibary/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinityLibaries/MaidLibary/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinityLibaries/MathLibary/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinityLibaries/NetLibary/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinityLibaries/PromiseLibary/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinityLibaries/ProxyLibary/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinityLibaries/SignalLibary/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinityLibaries/StateLibary/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinityLibaries/TableLibary/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinityLibaries/TimerLibary/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinityLibaries/UtilsLibary/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://4x8matrix.github.io/InfinityPages/InfinitySingletons/InfinityConsole/</loc>
-         <lastmod>2022-02-12</lastmod>
+         <lastmod>2022-02-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://4x8matrix.github.io/InfinityPages/InfinitySingletons/InfinityCoreGui/</loc>
+         <lastmod>2022-02-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://4x8matrix.github.io/InfinityPages/InfinitySingletons/InfinitySound/</loc>
+         <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

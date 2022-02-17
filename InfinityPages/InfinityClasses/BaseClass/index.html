@@ -519,6 +519,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#classsetclassname" class="md-nav__link">
+    Class.SetClassName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#classgetmethods" class="md-nav__link">
     Class.GetMethods
   </a>
@@ -863,6 +870,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../InfinitySingletons/InfinitySound/" class="md-nav__link">
+        Sound
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../InfinitySingletons/InfinityCoreGui/" class="md-nav__link">
+        CoreGui
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1014,13 +1049,18 @@ For more information on signal objects, look <a href="../../InfinityLibaries/Sig
 </code></pre></div>
 <p>Await yields the current thread until an object has been found inside of the class, this can be used to pause execution until a flag has been met on an object and so forth. </p>
 <hr />
+<h4 id="classsetclassname">Class.SetClassName</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">ClassObject</span><span class="p">:</span><span class="n">SetClassName</span><span class="p">(</span><span class="n">ClassName</span><span class="p">:</span> <span class="n">string</span><span class="p">)</span>
+</code></pre></div>
+<p>Set the type &amp; name of the class to the given string argument.</p>
+<hr />
 <h4 id="classgetmethods">Class.GetMethods</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">ClassObject</span><span class="p">:</span><span class="n">GetMethods</span><span class="p">()</span> <span class="c1">-- &gt; { MethodName: Method }</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">ClassObject</span><span class="p">:</span><span class="n">GetMethods</span><span class="p">()</span> <span class="c1">-- &gt; { MethodName: Method }</span>
 </code></pre></div>
 <p>Returns a dictionary of methods/functions that have been added to the class object.</p>
 <hr />
 <h4 id="classdestroy">Class.Destroy</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">ClassObject</span><span class="p">:</span><span class="n">Destroy</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">ClassObject</span><span class="p">:</span><span class="n">Destroy</span><span class="p">()</span>
 </code></pre></div>
 <p>Initiates an iteration through the class object, destroying, disconnecting and removing objects within the class itself. </p>
 <div class="admonition warning">
@@ -1030,7 +1070,7 @@ For more information on signal objects, look <a href="../../InfinityLibaries/Sig
 </div>
 <hr />
 <h4 id="classextend">Class.Extend</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">ClassObject</span><span class="p">:</span><span class="n">Extend</span><span class="p">(...</span><span class="o">&lt;</span><span class="n">any</span><span class="o">&gt;</span><span class="p">)</span> <span class="c1">-- &gt; Sub-Class of ClassObject</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">ClassObject</span><span class="p">:</span><span class="n">Extend</span><span class="p">(...</span><span class="o">&lt;</span><span class="n">any</span><span class="o">&gt;</span><span class="p">)</span> <span class="c1">-- &gt; Sub-Class of ClassObject</span>
 </code></pre></div>
 <p>This method is used to create extentions of every class inside of the Infinity framework, This function is added to each Class and can be called on each class, allowing you to infinitly extend and create components from other components.</p>
 <p>The result of an extend is a subclass of the class you just extended from, everything from ClassObject will be inherited into this new SubClass which will reference functions and so on from our previous classes.</p>
@@ -1041,22 +1081,22 @@ For more information on signal objects, look <a href="../../InfinityLibaries/Sig
 </div>
 <h3 id="baseclass-properties">BaseClass Properties</h3>
 <h4 id="classtype">Class.Type</h4>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">ClassObject</span><span class="p">.</span><span class="n">Type</span> <span class="c1">--&gt; String</span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">ClassObject</span><span class="p">.</span><span class="n">Type</span> <span class="c1">--&gt; String</span>
 </code></pre></div>
 Returns the type of Class it is, Ranging from PublicClass to Proxy/Network Class</p>
 <hr />
 <h4 id="classname">Class.Name</h4>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">ClassObject</span><span class="p">.</span><span class="n">Name</span> <span class="c1">--&gt; String</span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">ClassObject</span><span class="p">.</span><span class="n">Name</span> <span class="c1">--&gt; String</span>
 </code></pre></div>
 The name of the class, the name can be set by the class or during the extention of a class.</p>
 <hr />
 <h4 id="classinfinity">Class.Infinity</h4>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">ClassObject</span><span class="p">.</span><span class="n">Infinity</span> <span class="c1">--&gt; Infinity</span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">ClassObject</span><span class="p">.</span><span class="n">Infinity</span> <span class="c1">--&gt; Infinity</span>
 </code></pre></div>
 A reference to the Infinity Framework, Internal use mostly.</p>
 <hr />
 <h4 id="classsuper">Class.Super</h4>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">ClassObject</span><span class="p">.</span><span class="n">Infinity</span> <span class="c1">--&gt; ClassObject</span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">ClassObject</span><span class="p">.</span><span class="n">Infinity</span> <span class="c1">--&gt; ClassObject</span>
 </code></pre></div>
 Returns the <a href="https://www.w3schools.com/java/ref_keyword_super.asp#:~:text=The%20super%20keyword%20refers%20to,methods%20with%20the%20same%20name.">Super Class</a> to this class. </p>
 
@@ -1129,7 +1169,7 @@ Returns the <a href="https://www.w3schools.com/java/ref_keyword_super.asp#:~:tex
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "navigation.instant", "toc.integrate", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.22074ed6.min.js", "version": 1.2}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "toc.integrate", "navigation.tracking", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.22074ed6.min.js", "version": 1.2}</script>
     
     
       <script src="../../../assets/javascripts/bundle.960e086b.min.js"></script>
