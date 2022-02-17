@@ -32,7 +32,7 @@ print(MyClass.Variable) -- > This will error, Indexing nil 'Variable'
 
 ## Infinity Model
 ### Infinity Require Model
-<img src="/Assets/Images/InfinityRModel.png" width="400">
+<img src="/SiteAssets/Images/InfinityRModel.png" width="400">
 
 The Infinity Require model explains what hapens when you first require the Infinity Module, There's alot more going on than what you'd assume. 
 
@@ -42,7 +42,7 @@ The Infinity Require model explains what hapens when you first require the Infin
     Infinity Clients need the Master in order to recieve critical information about NetClasses and so on.
 
 ### Infinity Initialize Model
-<img src="/Assets/Images/InfinityIModel.png" width="400">
+<img src="/SiteAssets/Images/InfinityIModel.png" width="400">
 
 The Infinity initialize model is very different from the Require Model, This model represents what happens when you call :Initialize on the Infinity object. 
 

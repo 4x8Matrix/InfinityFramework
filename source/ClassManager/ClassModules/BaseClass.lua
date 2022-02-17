@@ -117,6 +117,11 @@ function ClassObject.Methods:Destroy()
     end
 end
 
+function ClassObject.Methods:SetClassName(ClassName)
+    self.Name = ClassName
+    self.Type = ClassName
+end
+
 function ClassObject.Methods:__Initialize(Prototype)
     Prototype:Construct(self)
 end

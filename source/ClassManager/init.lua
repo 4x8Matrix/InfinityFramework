@@ -37,12 +37,20 @@ function ClassManager:InvokeClassEvent(EventClasses, Event, ...)
     end
 end
 
+function ClassManager:AppendClassToEventLoop(EventClass)
+    table.insert(self.__ClassListners, EventClass)
+end
+
 function ClassManager:BuildEventLoop(EventClasses)
-    if not self.Infinity.IsServer then
-        RunService.RenderStepped:Connect(function(...) self:InvokeClassEvent(EventClasses, "Stepped", ...) end)
+    for _, Class in ipairs(EventClasses) do
+        self:AppendClassToEventLoop(Class)
     end
 
-    RunService.Heartbeat:Connect(function(...) self:InvokeClassEvent(EventClasses, "Heartbeat", ...) end)
+    if not self.Infinity.IsServer then
+        RunService.RenderStepped:Connect(function(...) self:InvokeClassEvent(self.__ClassListners, "Stepped", ...) end)
+    end
+
+    RunService.Heartbeat:Connect(function(...) self:InvokeClassEvent(self.__ClassListners, "Heartbeat", ...) end)
 end
 
 function ClassManager:ConstructClasses()
@@ -64,6 +72,7 @@ end
 -- // Initialization
 function ClassManager:Init(Infinity)
     self.Infinity = Infinity
+    self.__ClassListners = { }
 
     for _, Value in ipairs(self.ClassModules) do
         ClassManager.Classes[Value.Name] = require(Value)

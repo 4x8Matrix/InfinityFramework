@@ -8,7 +8,7 @@ This Class is alot like the PublicClass, this class will be added to the infinit
     The events fired here are context-bound, Server's Heartbeat wont be sent to the client. 
 
 ## NetworkClass Model
-<img src="../../../Assets/Images/NetworkCModel.png" width="200">
+<img src="../../../SiteAssets/Images/NetworkCModel.png" width="200">
 
 When a Client joins the game, they will recieve a packet holding important information to structure and replicate NetworkClasses to their Infinity client, from here on the client will create a *ProxyClass* [Internal Infinity Class] which will be used to replicate functions, signals and so on to the server.
 

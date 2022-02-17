@@ -151,6 +151,14 @@ ClassObject:Await(ObjectName: string) -- > Object
 Await yields the current thread until an object has been found inside of the class, this can be used to pause execution until a flag has been met on an object and so forth. 
 
 --------------------
+#### Class.SetClassName
+```lua
+ClassObject:SetClassName(ClassName: string)
+```
+
+Set the type & name of the class to the given string argument.
+
+--------------------
 #### Class.GetMethods
 ```lua
 ClassObject:GetMethods() -- > { MethodName: Method }

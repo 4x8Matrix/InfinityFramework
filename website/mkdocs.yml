@@ -21,8 +21,8 @@ markdown_extensions:
 theme:
   name:                       material
 
-  logo:                       Assets/Icons/InfinityIcon.png
-  favicon:                    Assets/Icons/favicon.ico
+  logo:                       SiteAssets/Icons/InfinityIcon.png
+  favicon:                    SiteAssets/Icons/favicon.ico
   icon:
     repo:                     fontawesome/brands/git-alt
 
@@ -31,8 +31,8 @@ theme:
 
   features:
     - content.code.annotate
-    - navigation.instant
     - toc.integrate
+    - navigation.tracking
     - search.suggest
     - search.highlight
 
@@ -83,6 +83,8 @@ nav:
 
   - Singletons:
     - Console:                InfinityPages\InfinitySingletons\InfinityConsole.md
+    - Sound:                  InfinityPages\InfinitySingletons\InfinitySound.md
+    - CoreGui:                InfinityPages\InfinitySingletons\InfinityCoreGui.md
 
 extra:
   generator:                  false

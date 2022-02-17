@@ -14,8 +14,7 @@ function PrivateClass:Construct(Class)
     function Class.Extended(Class, ClassName)
         Class.Name = ClassName
 
-        table.insert(Class.Infinity.Classes, Class)
-        table.insert(Class.Infinity.Events, Class)
+        Class.Infinity.ClassManager:AppendClassToEventLoop(Class)
     end
 
     return Class
