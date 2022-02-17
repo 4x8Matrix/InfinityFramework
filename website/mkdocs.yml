@@ -90,6 +90,10 @@ extra:
   generator:                  false
   version:                    1.2
 
+  analytics:
+    provider:                 google
+    property:                 G-YX8LLZ31C8
+
   social:
     - icon:                   fontawesome/brands/discord
       link:                   https://discord.gg/y6amckh
