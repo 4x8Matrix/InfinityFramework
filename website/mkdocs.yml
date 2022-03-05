@@ -76,6 +76,7 @@ nav:
     - Promise:                InfinityPages\InfinityLibaries\PromiseLibary.md
     - Proxy:                  InfinityPages\InfinityLibaries\ProxyLibary.md
     - Signal:                 InfinityPages\InfinityLibaries\SignalLibary.md
+    - Watchdog:                 InfinityPages\InfinityLibaries\WatchdogLibary.md
     - State:                  InfinityPages\InfinityLibaries\StateLibary.md
     - Table:                  InfinityPages\InfinityLibaries\TableLibary.md
     - Timer:                  InfinityPages\InfinityLibaries\TimerLibary.md

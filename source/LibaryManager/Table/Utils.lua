@@ -20,6 +20,8 @@ function TableUtils:Transform(Source, Transform)
     for Index, Value in pairs(Source) do
         Source[Index] = Transform(Value)
     end
+
+    return Source
 end
 
 function TableUtils:GetKeys(Source)
