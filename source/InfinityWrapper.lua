@@ -3,7 +3,7 @@ local InfinityWrapper = { }
 
 -- // Methods
 function InfinityWrapper:Complete()
-    if not self.Infinity.IsServer then
+    if not self.Infinity.IsPlugin and not self.Infinity.IsServer then
         repeat task.wait() until script.Parent:GetAttribute("InfinityStateFlag")
     end
 

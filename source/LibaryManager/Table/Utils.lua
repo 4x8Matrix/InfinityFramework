@@ -44,4 +44,18 @@ function TableUtils:GetValues(Source)
     return Values
 end
 
+function TableUtils:Fill(TblA, TblB)
+    for Index, Object in pairs(TblB) do
+        if TblA[Index] then
+            if type(TblA[Index]) == "table" then
+                self:Fill(TblA[Index], Object)
+            end
+        else
+            TblA[Index] = Object
+        end
+    end
+
+    return TblA
+end
+
 return TableUtils

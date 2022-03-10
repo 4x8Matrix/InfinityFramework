@@ -45,13 +45,15 @@ end
 return function(Infinity)
     EventLibary.Infinity = Infinity
 
-    if EventLibary.Infinity.IsServer then
-        EventLibary.Folder = Instance.new("Folder")
+    if not EventLibary.Infinity.IsPlugin then
+        if EventLibary.Infinity.IsServer then
+            EventLibary.Folder = Instance.new("Folder")
 
-        EventLibary.Folder.Name = "InfinityRemoteEvents" 
-        EventLibary.Folder.Parent = game:GetService("ReplicatedStorage")
-    else
-        EventLibary.Folder = game:GetService("ReplicatedStorage"):WaitForChild("InfinityRemoteEvents")
+            EventLibary.Folder.Name = "InfinityRemoteEvents" 
+            EventLibary.Folder.Parent = game:GetService("ReplicatedStorage")
+        else
+            EventLibary.Folder = game:GetService("ReplicatedStorage"):WaitForChild("InfinityRemoteEvents")
+        end
     end
 
     return setmetatable({ Events = { } }, EventLibary)
