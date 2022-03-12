@@ -84,7 +84,7 @@ end
 
 -- // Initiation
 function PluginLibary:Init()
-    PluginLibary.PluginMaid = self.Infinity.Maid.new()
+    PluginLibary.Maid = self.Infinity.Maid.new()
     PluginLibary.Environment = getfenv(2)
 
     assert(PluginLibary.Environment.plugin ~= nil, "Expected `plugin`, found void.")
@@ -92,14 +92,14 @@ function PluginLibary:Init()
     PluginLibary.Locale = StudioService.StudioLocaleId
 
     PluginLibary.Plugin = PluginLibary.Environment["plugin"]
-    PluginLibary.PluginMaid:Register(PluginLibary.Plugin.Unloading:Connect(function()
+    PluginLibary.Maid:Register(PluginLibary.Plugin.Unloading:Connect(function()
         PluginLibary.Closing = true
     end))
 
-    PluginLibary.PluginMaid:Register(PluginLibary.Plugin.Deactivation:Connect(function()
+    PluginLibary.Maid:Register(PluginLibary.Plugin.Deactivation:Connect(function()
         PluginLibary.Closed = true
 
-        PluginLibary.PluginMaid:Clean()
+        PluginLibary.Maid:Clean()
     end))
 
     self.Initialized = false
