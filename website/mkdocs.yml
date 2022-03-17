@@ -56,7 +56,6 @@ theme:
 nav:
   - Home:                     index.md
   - Installation:             InstallPage.md
-  - Setup:                    SetupPage.md
   - Infinity:                 InfinityPage.md
 
   - Classes:
@@ -76,15 +75,11 @@ nav:
     - Promise:                InfinityPages\InfinityLibaries\PromiseLibary.md
     - Proxy:                  InfinityPages\InfinityLibaries\ProxyLibary.md
     - Signal:                 InfinityPages\InfinityLibaries\SignalLibary.md
+    - Watchdog:                 InfinityPages\InfinityLibaries\WatchdogLibary.md
     - State:                  InfinityPages\InfinityLibaries\StateLibary.md
     - Table:                  InfinityPages\InfinityLibaries\TableLibary.md
     - Timer:                  InfinityPages\InfinityLibaries\TimerLibary.md
     - Utils:                  InfinityPages\InfinityLibaries\UtilsLibary.md
-
-  - Singletons:
-    - Console:                InfinityPages\InfinitySingletons\InfinityConsole.md
-    - Sound:                  InfinityPages\InfinitySingletons\InfinitySound.md
-    - CoreGui:                InfinityPages\InfinitySingletons\InfinityCoreGui.md
 
 extra:
   generator:                  false

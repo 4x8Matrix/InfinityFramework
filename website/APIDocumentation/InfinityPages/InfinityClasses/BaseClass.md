@@ -17,7 +17,7 @@ end
 
 The Heartbeat function will be invoked each [Heartbeat](https://developer.roblox.com/en-us/api-reference/event/RunService/Heartbeat)
 
-!!! Infomation
+!!! Information
     This event only applies to classes inside of the Infinity-Event register, classes such as *StaticClass* will not recieve these events.
 
 !!! Warning
@@ -33,7 +33,7 @@ end
 
 The Heartbeat function will be invoked each [RenderStepped](https://developer.roblox.com/en-us/api-reference/event/RunService/RenderStepped)
 
-!!! Infomation
+!!! Information
     This event only applies to classes inside of the Infinity-Event register, classes such as *StaticClass* will not recieve these events.
 
 !!! Warning

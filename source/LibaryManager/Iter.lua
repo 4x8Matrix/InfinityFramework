@@ -14,7 +14,15 @@ function IterObject:GetKey() return self.Key end
 function IterObject:GetIndex() return self.Index end
 function IterObject:GetValue() return self.Value end
 
+function IterObject:Stop() self.Cancelled = true end
+
 function IterObject:Next()
+    if self.Cancelled then
+        self.Cancelled = nil
+
+        return
+    end
+
     if self.Type == 0 then
         self.Key, self.Value = next(self.Object, self.Key)
     else

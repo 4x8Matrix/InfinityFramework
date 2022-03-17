@@ -14,7 +14,8 @@ function StateObject:Dec(Value) self.Value = self.Value - Value self.Changed:Fir
 function StateLibary.new(Value)
     local Signal = StateLibary.Infinity.Signal
 
-    return setmetatable({ 
+    return setmetatable({
+        Orig = Value;
         Value = Value;
         Changed = Signal.new();
     }, StateObject)

@@ -22,3 +22,14 @@ For our examples, We will deploy the Infinity Framework to **ReplicatedStorage**
 
 To sync the changes on your local system, you should use plugins such as [Rojo](https://rojo.space). 
 This plugin will help sync changes from your local system to a studio instance! 
+
+## Setup
+Once your Infinity Source is Synced & Installed, to use Infinity, you'll have to require the module. 
+
+```lua
+local Infinity = require(game.ReplicatedStorage.Infinity)
+
+-- Create Components, Logic and so on.
+
+Infinity:Initialize()
+```

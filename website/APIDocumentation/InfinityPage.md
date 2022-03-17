@@ -1,6 +1,7 @@
 ## Infinity Registry
-The Infinity registy is essentially a dictionary holding alot of key classes, properties, methods and so on. 
-The Infinity module itself is the Registry, once you initialize infinity, classes will be added to infinity directly, allowing you to access Infinity classes like;
+The Infinity registry is a table holding a bunch of important classes, properties and methods. 
+The Infinity object is essentially a table full of PublicClasses, methods, and references assigned by the developer. 
+An example on how you'd reference a PublicClass through Infinity.
 
 *Script #1*
 ```lua
@@ -19,16 +20,13 @@ end)
 ```
 
 !!! Important
-    Below is an example of what you should NOT do.
+    As an example, below is *Script #2* however, pre-initialization.
 
 ```lua
--- This hooks gets invoked when Infinity gets initialized, allowing us to connect to the infinity Init-Pipeline
-local MyClass = Infinity.MyPublicClass
+local MyClass = Infinity.MyPublicClass -- This doens't yet exist, not until Infinity's :Initialize method has been called.
 
-print(MyClass.Variable) -- > This will error, Indexing nil 'Variable' 
--- Infinity hasn't started yet, any `PublicClass` objects aren't in the Infinity Registry
+print(MyClass.Variable) -- > Will invoke an error, you're indexing a nil value.
 ```
-
 
 ## Infinity Model
 ### Infinity Require Model
@@ -93,6 +91,14 @@ end)
 ```
 
 ### Infinity Properties
+#### Infinity.IsPlugin
+```lua
+Infinity.IsPlugin --> Bool
+```
+
+Used to detect if Infinity is running as a Plugin.
+
+--------------------------------
 #### Infinity.IsServer
 ```lua
 Infinity.IsSever --> Bool
@@ -100,6 +106,7 @@ Infinity.IsSever --> Bool
 
 Aliase for RunService:IsServer()
 
+--------------------------------
 #### Infinity.IsStudio
 ```lua
 Infinity.IsStudio --> Bool

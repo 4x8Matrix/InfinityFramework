@@ -56,13 +56,15 @@ end
 return function(Infinity)
     FunctionLibary.Infinity = Infinity
 
-    if FunctionLibary.Infinity.IsServer then
-        FunctionLibary.Folder = Instance.new("Folder")
+    if not FunctionLibary.Infinity.IsPlugin then
+        if FunctionLibary.Infinity.IsServer then
+            FunctionLibary.Folder = Instance.new("Folder")
 
-        FunctionLibary.Folder.Name = "InfinityRemoteFunctions"
-        FunctionLibary.Folder.Parent = game:GetService("ReplicatedStorage")
-    else
-        FunctionLibary.Folder = game:GetService("ReplicatedStorage"):WaitForChild("InfinityRemoteFunctions")
+            FunctionLibary.Folder.Name = "InfinityRemoteFunctions"
+            FunctionLibary.Folder.Parent = game:GetService("ReplicatedStorage")
+        else
+            FunctionLibary.Folder = game:GetService("ReplicatedStorage"):WaitForChild("InfinityRemoteFunctions")
+        end
     end
 
     return setmetatable({ Functions = { } }, FunctionLibary)

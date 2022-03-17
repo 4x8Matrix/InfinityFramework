@@ -5,7 +5,6 @@ local RunService = game:GetService("RunService")
 local ClassManager = { Classes = { } }
 
 ClassManager.ClassModules = require(script.ClassModules)
-ClassManager.SigletonModules = require(script.SigletonModules)
 
 -- // Methods
 function ClassManager:Construct(ClassName)
@@ -63,10 +62,6 @@ function ClassManager:ConstructClasses()
     else
         self.Infinity.ProxyClass = self:Construct("ProxyClass")
     end
-end
-
-function ClassManager:ConstructSingletons()
-    self.Infinity.FileSystem:LoadTable(self.SigletonModules)
 end
 
 -- // Initialization

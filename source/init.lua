@@ -103,6 +103,7 @@ function Infinity.new()
 
     self.IsStudio = RunService:IsStudio()
     self.IsServer = RunService:IsServer()
+    self.IsPlugin = pcall(RunService.IsEdit, RunService)
 
     self.Classes = { }
     self.Network = { }
@@ -116,11 +117,11 @@ function Infinity.new()
     self.Stepped = (self.IsServer and RunService.Heartbeat) or RunService.RenderStepped
 
     self.LibaryManager:DeployLibaries()
-
     self.ClassManager:ConstructClasses()
-    self.ClassManager:ConstructSingletons()
 
-    self:SyncInfinity()
+    if not self.IsPlugin then
+        self:SyncInfinity()
+    end
 
     return self.Wrapper:Complete()
 end
