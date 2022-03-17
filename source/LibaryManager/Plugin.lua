@@ -10,6 +10,8 @@ local UserGameSettings = UserSettings():GetService("UserGameSettings")
 local PluginLibary = { Name = "Plugin" }
 
 -- // Properties
+PluginLibary.Toolbar = { }
+
 PluginLibary.Closing = false
 PluginLibary.Closed = false
 
@@ -18,24 +20,24 @@ PluginLibary.StudioModeChanged = UserGameSettings.StudioModeChanged
 PluginLibary.FullscreenChanged = UserGameSettings.FullscreenChanged
 
 -- // Toolbar Methods
-function PluginLibary:IsToolbar(ToolbarName)
-	return self:GetToolbar(ToolbarName) ~= nil
+function PluginLibary.Toolbar.new(ToolbarName)
+    assert(PluginLibary.Initialized == true, "PluginLibary Initialization Required; Please call :Init on the Plugin Libary")
+
+    local ToolbarObject = PluginLibary.Plugin:CreateToolbar(ToolbarName)
+    local ToolbarReference = Instance.new("ObjectValue")
+
+    ToolbarReference.Name = ToolbarName
+    ToolbarReference.Value = ToolbarObject
+    ToolbarReference.Parent = StudioService
+
+    return ToolbarObject
 end
 
-function PluginLibary:CreateToolbar(ToolbarName)
-    assert(self.Initialized == true, "PluginLibary Initialization Required; Please call :Init on the Plugin Libary")
-
-	local ToolbarObject = self.Plugin:CreateToolbar(ToolbarName)
-	local ToolbarReference = Instance.new("ObjectValue")
-
-	ToolbarReference.Name = ToolbarName
-	ToolbarReference.Value = ToolbarObject
-	ToolbarReference.Parent = StudioService
-
-	return ToolbarObject
+function PluginLibary.Toolbar:IsToolbar(ToolbarName)
+	return PluginLibary:GetToolbar(ToolbarName) ~= nil
 end
 
-function PluginLibary:RemoveToolbar(ToolbarName)
+function PluginLibary.Toolbar:RemoveToolbar(ToolbarName)
     local ToolbarReference = StudioService:FindFirstChild(ToolbarName)
 
     if ToolbarReference then
@@ -44,7 +46,7 @@ function PluginLibary:RemoveToolbar(ToolbarName)
     end
 end
 
-function PluginLibary:GetToolbar(ToolbarName)
+function PluginLibary.Toolbar:GetToolbar(ToolbarName)
 	local ToolbarReference = StudioService:FindFirstChild(ToolbarName)
 
 	return ToolbarReference and ToolbarReference.Value
@@ -84,7 +86,7 @@ end
 
 -- // Initiation
 function PluginLibary:Init()
-    PluginLibary.Maid = self.Infinity.Maid.new()
+    PluginLibary.Maid = PluginLibary.Infinity.Maid.new()
     PluginLibary.Environment = getfenv(2)
 
     assert(PluginLibary.Environment.plugin ~= nil, "Expected `plugin`, found void.")
@@ -102,12 +104,12 @@ function PluginLibary:Init()
         PluginLibary.Maid:Clean()
     end))
 
-    self.Initialized = false
+    PluginLibary.Initialized = false
 end
 
 -- // Initialization
 return function(Infinity)
-    PluginLibary.Infinity = PluginLibary
+    PluginLibary.Infinity = Infinity
 
     return Infinity.IsPlugin and PluginLibary
 end

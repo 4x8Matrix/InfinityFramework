@@ -62,12 +62,30 @@ function PromiseObject:Cancel()
 end
 
 function PromiseObject:Await()
-    self.Internal.Await[#self.Internal.Await + 1] = coroutine.running()
-
     if self.Status then
         return self.Status == PromiseLibary.Resolved, self:GetResult()
-    else
+	else
+		self.Internal.Await[#self.Internal.Await + 1] = coroutine.running()
+		
         return coroutine.yield()
+    end
+end
+
+function PromiseObject:AwaitSuccess()
+    if self.Status == PromiseLibary.Resolved then
+        return self:GetResult()
+	else
+		self.Internal.Await[#self.Internal.Await + 1] = coroutine.running()
+
+        local Success, Result = coroutine.yield()
+
+        if Success then
+            return Result
+        else
+            task.wait(.5)
+
+            return self:AwaitSuccess()
+        end
     end
 end
 
@@ -91,13 +109,15 @@ function PromiseObject:Resolve(...)
         local Success, Result = coroutine.resume(Routine, true, ...)
 
         if not Success then
-            return error(Result)
+            return error(Result, math.huge)
         end
     end
 
     if self.Internal.Finally then
         task.spawn(self.Internal.Finally, ...)
     end
+
+    self.Internal.Await = { }
 end
 
 function PromiseObject:Reject(...)
@@ -110,10 +130,11 @@ function PromiseObject:Reject(...)
         local Success, Result = coroutine.resume(Routine, false, ...)
 
         if not Success then
-            return error(Result)
+            return error(Result, math.huge)
         end
     end
 
+    self.Internal.Await = { }
     if self.Internal.Catch then
         task.spawn(self.Internal.Catch, self, ...)
     else
