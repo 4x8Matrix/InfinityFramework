@@ -1,19 +1,22 @@
 Infinity is a LuaU game framework designed for the Roblox Engine! 
-Infinity's purpose as a game framework is to speed up the development of your Roblox-Experience, with a ton of different libaries, singletons and classes, developers can deploy advanced systems and manipulate them through Infinity easily!
+Infinity's purpose is to define structure and speed up development inside of your experiences. 
 
-This framework combines both ECS and OOP principles, The core infinity object itself uses these principles to create a reliable registry, that'll allow you to access public classes and so on.
+This framework takes in both ECS and OOP principles, Infinity itself using these paradigm to construct an advanced framework.
+Infinity offers things such as state management, simplistic network libaries, classes and so on. 
 
-If you encounter problems with Infinity, please be sure to let me know! 
+Infinity is also used in Plugin Development as well, this framework covers all Roblox contexts. 
+If you encounter problems with Infinity, you can let me know below! 
 
 - [Discord](https://discord.com/users/685566749516628033)
 - [GitHub](https://github.com/4x8Matrix/InfinityFramework/issues)
 
 !!! Warning
-    Infinity is still in it's early stages, I would stay away from using this framework for big-projects. 
+    Infinity is still in it's early stages. 
+    I'd avoid using this system in advanced projects.
 
 --------------------------------
 
-There are plenty of frameworks out there to help you design your experience, however, if you don't want to use Infinity, below is a list of frameworks that will help you design your game instead! 
+Alongside Infinity, there are other frameworks which can also define structure and potentially offer more than just Infinity, I have linked some below.
 
 - [Sleitnick/Knit](https://sleitnick.github.io/Knit/) [ Knit is a lightweight framework for Roblox that simplifies communication ... ]
 - [Sleitnick/AeroGameFramework](https://sleitnick.github.io/AeroGameFramework/) [ AeroGameFramework is a Roblox game framework that makes development easy ... ]

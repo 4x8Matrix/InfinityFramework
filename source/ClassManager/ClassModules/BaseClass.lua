@@ -88,7 +88,7 @@ end
 function ClassObject.Methods:GetMethods()
     local Methods = { }
 
-    for Index, Value in next, self do
+    for Index, Value in self do
         if type(Value) == "function" then
             Methods[Index] = Value
         end
@@ -98,7 +98,7 @@ function ClassObject.Methods:GetMethods()
 end
 
 function ClassObject.Methods:Destroy()
-    for Index, Value in next, self do
+    for Index, Value in self do
         if type(Value) == "userdata" then
             if Value.Name == "Signal" then
                 Value:Destroy()
@@ -137,8 +137,14 @@ function ClassObject.Methods:__Inherit(Prototype)
 end
 
 function ClassObject.Methods:Extend(...)
-    local ClassMetatable = { __index = self; }
-    local ClassPrototype = setmetatable({ Super = self; }, ClassMetatable)
+    local ClassPrototype = { Super = self; }
+    local ClassMetatable = { __index = self; __call = function(...)
+        self.Key, self.Value = next(ClassPrototype, self.Key)
+
+        return self.Key
+    end }
+
+    ClassPrototype = setmetatable(ClassPrototype, ClassMetatable)
     local ClassObject = self.Infinity.Proxy:FromTable(ClassPrototype)
 
     function ClassObject:OnExtended() end

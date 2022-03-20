@@ -12,7 +12,9 @@ function LibaryManager:DeployLibaries()
     for _, Value in ipairs(self.Libaries1) do
         local CompiledModule = Value(self.Infinity)
 
-        self.Infinity[CompiledModule.Name] = CompiledModule
+        if CompiledModule then
+            self.Infinity[CompiledModule.Name] = CompiledModule
+        end
     end
 end
 

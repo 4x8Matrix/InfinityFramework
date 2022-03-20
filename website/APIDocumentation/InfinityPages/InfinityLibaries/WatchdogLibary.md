@@ -1,0 +1,2 @@
+## WatchdogLibary Methods
+### WatchdogLibary.new
