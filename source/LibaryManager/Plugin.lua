@@ -33,11 +33,11 @@ function PluginLibary.Toolbar.new(ToolbarName)
     return ToolbarObject
 end
 
-function PluginLibary.Toolbar:IsToolbar(ToolbarName)
+function PluginLibary.Toolbar:Has(ToolbarName)
 	return PluginLibary:GetToolbar(ToolbarName) ~= nil
 end
 
-function PluginLibary.Toolbar:RemoveToolbar(ToolbarName)
+function PluginLibary.Toolbar:Remove(ToolbarName)
     local ToolbarReference = StudioService:FindFirstChild(ToolbarName)
 
     if ToolbarReference then
@@ -46,7 +46,7 @@ function PluginLibary.Toolbar:RemoveToolbar(ToolbarName)
     end
 end
 
-function PluginLibary.Toolbar:GetToolbar(ToolbarName)
+function PluginLibary.Toolbar:Get(ToolbarName)
 	local ToolbarReference = StudioService:FindFirstChild(ToolbarName)
 
 	return ToolbarReference and ToolbarReference.Value
@@ -104,7 +104,7 @@ function PluginLibary:Init()
         PluginLibary.Maid:Clean()
     end))
 
-    PluginLibary.Initialized = false
+    PluginLibary.Initialized = true
 end
 
 -- // Initialization
