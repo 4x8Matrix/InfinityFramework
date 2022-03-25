@@ -16,7 +16,7 @@ function TableLibary.Clone(Source)
         local valueType = type(Value)
 
         if valueType == "table" then
-            Result[Index] = self.Clone(Value)
+            Result[Index] = TableLibary.Clone(Value)
         else
             Result[Index] = Value
         end
@@ -65,7 +65,7 @@ function TableLibary.Fill(TblA, TblB)
     for Index, Object in pairs(TblB) do
         if TblA[Index] then
             if type(TblA[Index]) == "table" then
-                self.Fill(TblA[Index], Object)
+                TableLibary.Fill(TblA[Index], Object)
             end
         else
             TblA[Index] = Object
