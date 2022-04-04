@@ -31,7 +31,13 @@ end
 function ClassManager:InvokeClassEvent(EventClasses, Event, ...)
     for _, Class in ipairs(EventClasses) do
         if Class[Event] then
-            Class[Event](Class, ...)
+            if Class.Paralell and task.desynchronize then
+                task.desynchronize()
+                Class[Event](Class, ...)
+                task.synchronize()
+            else
+                Class[Event](Class, ...)
+            end
         end
     end
 end

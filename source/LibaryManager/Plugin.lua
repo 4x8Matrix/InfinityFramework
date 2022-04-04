@@ -1,5 +1,5 @@
 -- // Services
-local StudioService = game:GetService("StudioService")
+local StudioService
 local PlayersService = game:GetService("Players")
 local ChangeHistoryService = game:GetService("ChangeHistoryService")
 local Selection = game:GetService("Selection")
@@ -90,6 +90,8 @@ function PluginLibary:Init()
     PluginLibary.Environment = getfenv(2)
 
     assert(PluginLibary.Environment.plugin ~= nil, "Expected `plugin`, found void.")
+
+    StudioService = game:GetService("StudioService")
 
     PluginLibary.Locale = StudioService.StudioLocaleId
 

@@ -88,7 +88,9 @@ end
 function ClassObject.Methods:GetMethods()
     local Methods = { }
 
-    for Index, Value in self do
+	for Index in self do
+		local Value = self[Index]
+		
         if type(Value) == "function" then
             Methods[Index] = Value
         end
@@ -98,19 +100,19 @@ function ClassObject.Methods:GetMethods()
 end
 
 function ClassObject.Methods:Destroy()
-    for Index, Value in self do
-        if type(Value) == "userdata" then
-            if Value.Name == "Signal" then
-                Value:Destroy()
-            elseif Value.Name == "Connection" then
+	for Index in self do
+		local Value = self[Index]
+		
+        if typeof(Value) == "userdata" then
+            if Value.Name == "Connection" then
                 Value:Disconnect()
             elseif Value.Name == "Maid" then
-                Value:Destroy()
+				Value:Clean()
             end
         elseif typeof(Value) == "RBXScriptConnection" then
             Value:Disconnect()
-        elseif typeof(Value) == "Instance" then
-            Value:Disconnect()
+		elseif typeof(Value) == "Instance" then
+			pcall(Value.Destroy, Value)
         end
 
         self[Index] = nil
@@ -149,11 +151,8 @@ function ClassObject.Methods:Extend(...)
 
     function ClassObject:OnExtended() end
 
-    if ClassPrototype.Extended then ClassObject:Extended(...) end
-
-    if self.OnExtended then
-        self:OnExtended(ClassObject, ...)
-    end
+    if self.OnExtended then self:OnExtended(ClassObject, ...) end
+	if ClassPrototype.Extended then ClassObject:Extended(...) end
 
     ClassMetatable.__metatable = "the metatable is locked"
     return ClassObject
