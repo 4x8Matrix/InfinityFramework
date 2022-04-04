@@ -59,22 +59,22 @@ function NetworkClass:Construct(Class)
 
         Class.Function:Bind(function(Client, ClientPacket)
             if ClientPacket[1] == 0 then -- client sync
-                if self.ClassPacket then return self.ClassPacket end
+                if Class.ClassPacket then return Class.ClassPacket end
 
-                self.ClassPacket = { }
+                Class.ClassPacket = { }
 
                 for Index, Value in next, Class.Client do
-                    self.ClassPacket[Index] = {
+                    Class.ClassPacket[Index] = {
                         type(Value);
                         Value;
                     }
 
                     if typeof(Value) == "userdata" then
-                        self.ClassPacket[Index][2] = Value.Name
+                        Class.ClassPacket[Index][2] = Value.Name
                     end
                 end
 
-                return self.ClassPacket
+                return Class.ClassPacket
 			elseif ClientPacket[1] == 1 then -- call function
 				if ClientPacket[2] then -- Namecall
                     return { pcall(Class.Client[ClientPacket[3]], Class, Client, table.unpack(ClientPacket[4])) }
